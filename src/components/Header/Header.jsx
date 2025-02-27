@@ -14,11 +14,14 @@ export default function Header() {
     function handleFormData(e){
         setFormData(e.target.value)
     }
+
+    // Prova console.log
     console.log(formData)
 
 
     // Importo con il global context setRicerca
     const {setRicerca}= useContext(GlobalContext)
+
 
     function handleSubmit(e){
         e.preventDefault()
