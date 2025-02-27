@@ -1,5 +1,10 @@
 // Importo Header
 import Header from "./components/Header/Header"
+// Importo Main
+import Main from "./components/Main/Main"
+
+
+
 
 // Importo libreria Axios
 import axios from "axios"
@@ -13,31 +18,38 @@ import GlobalContext from "./contexts/GlobalContext"
 function App() {
   
   // Variabile di stato cosi aggiorniamo i dati che ci arrivano dall Api con setFilm
-  const [film, setFilm] = useState([])
+  const [films, setFilms] = useState([])
+  
+  // Variabile di stato che gestice il risultato della ricerca
+  const [ricerca, setRicerca] = useState("")
+
 
   // Funzione che gestisce la chiamata API ()
-  function fetchFilm() {
+  function fetchFilms(ricerca) {
     // Chiamata di tipo get con libreria Axios 
-    axios.get("https://api.themoviedb.org/3/search/movie?api_key=5f71a957843568c6817e780ec58232d4&query=ritorno+al+futuro")
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=5f71a957843568c6817e780ec58232d4&query=${ricerca}`)
 
     //Risposta ricevuta dall Api 
-    .then((res) => setFilm(res.data.results))
+    .then((res) => setFilms(res.data.results))
     
     // Se la richiesta fallisce 
     .catch(err => console.log(err))
   }
 
   // Inseriamo lo useEffect cosi che al caricamento il componente viene montato una volta  e basta con [] , se volessimo far si che un valore cambia lo mettiamo [valore], dove seguira useEffect ogni volta che valore cambia
-  useEffect(fetchFilm, []);
+  useEffect(() => { fetchFilms(ricerca) }, [ricerca]);
+
+
+
 
   return (
     <>
 
-      <GlobalContext.Provider value={{film ,setFilm}}>
+      <GlobalContext.Provider value={{films, setRicerca}}>
 
 
         <Header />
-
+        <Main />
 
       </GlobalContext.Provider>
 
