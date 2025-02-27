@@ -31,6 +31,7 @@ export default function Main() {
                         <section className="set-section" key={film.id}>
                             <h2>{film.title}</h2>
                             <h3>{film.original_title}</h3>
+                            <img src={`https://image.tmdb.org/t/p/w342${film.backdrop_path}`} alt={`${film.original_title}`} />
                             <p>{film.original_language}
                                 <Flag code={countryCode} style={{ width: 50, height: 30 }} />
                             </p>
@@ -48,6 +49,7 @@ export default function Main() {
                         <section className="set-section" key={serie.id}>
                             <h2>{serie.name}</h2>
                             <h3>{serie.original_name}</h3>
+                            <img src={`https://image.tmdb.org/t/p/w342${serie.backdrop_path}`} alt={`${serie.name}`} />
                             <p>{serie.original_language}
                                 <Flag code={countryCode} style={{ width: 50, height: 30 }} />
                             </p>
