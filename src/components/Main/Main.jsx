@@ -32,80 +32,91 @@ export default function Main() {
         <>
             <main>
                 <h1>FILM</h1>
-                {films.map(film => {
-                    
-                    const countryCode = languageToCountry[film.original_language] || "ZW";  
+                <div className="container">
 
-                    const votoFilm =Math.ceil(film.vote_average / 2)
-                    // console.log(votoFilm)
+                    {films.map(film => {
 
-                    // Genero stelle utilizzo ciclo for
-                    let stelle = []
-                    for (let i = 0; i < 5; i++) {
-                        stelle.push(
-                            <FontAwesomeIcon 
-                            key={i}
-                            icon={faStar} 
-                            style={{color: i < votoFilm ? "#ffff80" : "#c0c0c0"}} />
-                        )
+                        const countryCode = languageToCountry[film.original_language] || "ZW";
 
-                    }
+                        const votoFilm = Math.ceil(film.vote_average / 2)
+                        // console.log(votoFilm)
 
-                    return (
-                        <section className="set-section"key={film.id}>
-                            <h2>{film.title}</h2>
-                            <h3>{film.original_title}</h3>
-                            <img src={`https://image.tmdb.org/t/p/w342${film.backdrop_path}`} alt={`${film.original_title}`} />
-                            <p>{film.original_language}
-                                <Flag code={countryCode} style={{ width: 50, height: 30 }} />
-                            </p>
-                            <p>{votoFilm.toFixed(0)}</p>
-                            <div>
-                                <p>
-                                    {stelle}
-                                </p>
-                            </div>
-                        </section>
+                        // Genero stelle utilizzo ciclo for
+                        let stelle = []
+                        for (let i = 0; i < 5; i++) {
+                            stelle.push(
+                                <FontAwesomeIcon
+                                    key={i}
+                                    icon={faStar}
+                                    style={{ color: i < votoFilm ? "#ffff80" : "#c0c0c0" }} />
+                            )
 
-                    );
-                })}
+                        }
+
+                        return (
+                            <section className="set-section" key={film.id}>
+                                <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="" className="img-post" />
+
+                                <div className="card-content">
+                                    <h5>Titolo: {film.title}</h5>
+                                    <h5>Titolo Originale: {film.original_title}</h5>
+                                    <p><Flag code={countryCode} style={{ width: 50, height: 30 }} /></p>
+                                    <p>Overview:{film.overview}</p>
+
+                                    <p>{stelle}</p>
+                                </div>
+
+
+                            </section>
+
+                        );
+                    })}
+                </div>
+
 
 
                 <h1>SERIE TV</h1>
-                {series.map(serie => {
-                    const countryCode = languageToCountry[serie.original_language] || "ZW";  
-                    const votoSerie=Math.ceil(serie.vote_average / 2)
-                    // console.log(votoSerie)
+                <div className="container">
 
-                    // Genero stelle utilizzo ciclo for
-                    let stelle = []
-                    for (let i = 0; i < 5; i++) {
-                        stelle.push(
-                            <FontAwesomeIcon 
-                            key={i}
-                            icon={faStar} 
-                            style={{color: i < votoSerie ? "#ffff80" : "#c0c0c0"}} />
-                        )
+                    {series.map(serie => {
+                        const countryCode = languageToCountry[serie.original_language] || "ZW";
+                        const votoSerie = Math.ceil(serie.vote_average / 2)
+                        // console.log(votoSerie)
 
-                    }
-                    
-                    return (
-                        <section className="set-section" key={serie.id}>
-                            <h2>{serie.name}</h2>
-                            <h3>{serie.original_name}</h3>
-                            <img src={`https://image.tmdb.org/t/p/w342${serie.backdrop_path}`} alt={`${serie.name}`} />
-                            <p>{serie.original_language}
-                                <Flag code={countryCode} style={{ width: 50, height: 30 }} />
-                            </p>
-                            <p>{votoSerie.toFixed(0)}</p>
-                            <div>
-                                <p>
-                                    {stelle}
-                                </p>
-                            </div>
-                        </section>
-                    );
-                })}
+                        // Genero stelle utilizzo ciclo for
+                        let stelle = []
+                        for (let i = 0; i < 5; i++) {
+                            stelle.push(
+                                <FontAwesomeIcon
+                                    key={i}
+                                    icon={faStar}
+                                    style={{ color: i < votoSerie ? "#ffff80" : "#c0c0c0" }} />
+                            )
+
+                        }
+
+                        return (
+                            <section className="set-section" key={serie.id}>
+                                <img src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} alt="" className="img-post" />
+
+                                <div className="card-content">
+                                    <h5>Titolo: {serie.name}</h5>
+                                    <h5>Titolo Originale: {serie.original_name}</h5>
+                                    <p><Flag code={countryCode} style={{ width: 50, height: 30 }} /></p>
+                                    <p>Overview:{serie.overview}</p>
+
+                                    <p>{stelle}</p>
+
+                                </div>
+
+                            </section>
+
+
+
+                        );
+                    })}
+                </div>
+
             </main>
         </>
     );
