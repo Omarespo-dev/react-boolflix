@@ -7,7 +7,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function FilmSection(props) {
-    // Faccio destructoring di props passando l elemento iesimo film
+    // Faccio destructoring di props passando l elemento iesimo
     const { film } = props
 
     // BANDIERE 
@@ -41,7 +41,7 @@ export default function FilmSection(props) {
     return (
 
         <section className="set-section" >
-            <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} alt="" className="img-post" />
+            <img src={`https://image.tmdb.org/t/p/w780${film.poster_path}`} alt="" className="img-post" />
 
             <div className="card-content">
                 <h5>Titolo: {film.title}</h5>

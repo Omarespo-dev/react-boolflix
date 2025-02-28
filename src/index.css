@@ -12,7 +12,19 @@ header{
     background-color: #201c1c;
     
 }
+.img-set nav{
+    display: flex;
+}
+.img-set nav a{
+    list-style-type: none;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
 
+}
+.img-set nav a:hover{
+    border-bottom: 2px solid red;
+}
 /* SEZIONE IMAGE NETF */
 .img-set{
     display: flex;
@@ -27,15 +39,7 @@ header{
     margin: 10px;
 }
 
-.img-set ul{
-    display: flex;
-}
 
-.img-set ul li{
-    list-style-type: none;
-    color: white;
-    padding: 10px;
-}
 
 /*  */
 form{
@@ -55,6 +59,10 @@ form{
 }
 .set-input-button p{
    color: white;
+}
+.set-input-button p:hover{
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
 }
 
 .set-input-button input{
@@ -88,17 +96,21 @@ form{
 .set-section{
     /* border: 2px dotted gray; */
     color: white;
-    width: 13%;
+    width: 200px;
     margin: 20px;
     height: 350px;
     background-color: black;
     position: relative;
+    border-radius: 20px;
+    
 }
+
 
 .img-post{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 /* Setto div con card content */
@@ -115,6 +127,7 @@ form{
     
     /* setto none e anche a img:hover e block alla set-section:hover .card-content */
     display: none; 
+    border-radius: 20px;
 }
 
 .img-post:hover {
@@ -123,6 +136,10 @@ form{
 
 .set-section:hover .card-content{
     display: block;
+    box-shadow:
+    inset 0 -3em 3em rgba(248, 89, 89, 0.397),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgb(200 0 0 / 60%);
 }
 
 
@@ -157,8 +174,9 @@ form{
 }
 
 
-#set-title {
+.set-title {
     display: flex;
     justify-content: center;
     color: white;
 }
+

@@ -1,23 +1,23 @@
 // Importo useContext e useState
 import { useContext, useState } from "react"
 
-// Img netflix
-import ImageNetf from "./ImageNetf"
+// Home header con
+import HomeHeader from "../pages/HomeHeader";
 
 // Import FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faBell} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons';
 
 // Importo Global Context cosi rendo la chiamata API accessibile da qualsiasi componente
 import GlobalContext from "./../../contexts/GlobalContext"
 
 
 export default function DataSubmit() {
-    
-    // Importo con il global context setRicerca
-    const { setRicerca, formData, setFormData} = useContext(GlobalContext)
 
-    
+    // Importo con il global context setRicerca
+    const { setRicerca, formData, setFormData } = useContext(GlobalContext)
+
+
 
     //3 Ora andiamo a gestire l onChange che e un evento con una funzione. La sua funzione e quando l utente scrive nel campo di testo rileva ogni cambiamento dell input
     // QUesta funzione serve a salvare i dati che l utente inserisce nel form e aggiornarli nello stato formData
@@ -29,7 +29,7 @@ export default function DataSubmit() {
     console.log(formData)
 
 
-    
+
     function handleSubmit(e) {
         e.preventDefault()
 
@@ -41,14 +41,17 @@ export default function DataSubmit() {
 
 
     }
-    
+
 
     // Variabile di stato per la comparsa e scomparsa dell input
     const [none, setNone] = useState(false)
 
     return (
         <form onSubmit={handleSubmit}>
-            <ImageNetf />
+            <div className="img-set">
+                <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="Netflix" />
+                <HomeHeader/>
+            </div>
 
             <div className="set-input-button">
                 {none &&
