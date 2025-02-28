@@ -16,11 +16,18 @@ import GlobalContext from "./contexts/GlobalContext"
 
 function App() {
   
-  // Variabile di stato cosi aggiorniamo i dati che ci arrivano dall Api con setFilm
-  const [films, setFilms] = useState([])
-  
   // Variabile di stato che gestice il risultato della ricerca
   const [ricerca, setRicerca] = useState("")
+  
+  // setto variabile di stato per l input
+  const [formData, setFormData] = useState("")
+
+  
+
+  ///////////////////  FILM ///////////////////////////// 
+
+  // Variabile di stato cosi aggiorniamo i dati che ci arrivano dall Api con setFilm
+  const [films, setFilms] = useState([])
 
 
   // Funzione che gestisce la chiamata API ()
@@ -65,7 +72,7 @@ function App() {
   return (
     <>
 
-      <GlobalContext.Provider value={{films, setRicerca, series}}>
+      <GlobalContext.Provider value={{films, setRicerca, series, formData,setFormData}}>
 
 
         <Header />
