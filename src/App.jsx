@@ -1,7 +1,6 @@
 // Importo Header
 import Header from "./components/Header/Header"
-// Importo Main
-import Main from "./components/Main/Main"
+
 
 // IMporto compoennti splittati
 import FilmSplit from "./components/Mainsplit/FilmSplit";
@@ -29,10 +28,15 @@ function App() {
 
   // Variabile di stato che gestice il risultato della ricerca
   const [ricerca, setRicerca] = useState("")
+  
+  // Variabile di stato che gestice il risultato della ricerca
+  // const [ricercaFilm, setRicercaFilm] = useState("")
 
   // setto variabile di stato per l input
   const [formData, setFormData] = useState("")
-
+  
+  // setto variabile di stato per l input
+  // const [formDataFilm, setFormDataFilm] = useState("")
 
 
   ///////////////////  FILM ///////////////////////////// 
@@ -81,7 +85,7 @@ function App() {
 
 
   return (
-    <GlobalContext.Provider value={{ films, setRicerca, series, formData, setFormData }}>
+    <GlobalContext.Provider value={{ films, setRicerca, series, formData, setFormData}}>
       <BrowserRouter>
         <Header />
         <Routes>

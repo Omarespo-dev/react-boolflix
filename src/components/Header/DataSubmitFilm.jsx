@@ -1,3 +1,6 @@
+
+// PROVA CON LA SUDDIVISIONE PER RICERCAFILM FUNZIONA MA ABBIAMO DUE COMPONENTI IN PAGE 
+
 // Importo useContext e useState
 import { useContext, useState } from "react"
 
@@ -15,19 +18,18 @@ import GlobalContext from "./../../contexts/GlobalContext"
 export default function DataSubmit() {
 
     // Importo con il global context setRicerca
-    const { setRicerca, formData, setFormData } = useContext(GlobalContext)
+    const { setRicercaFilm, formDataFilm, setFormDataFilm} = useContext(GlobalContext)
 
     
 
     //3 Ora andiamo a gestire l onChange che e un evento con una funzione. La sua funzione e quando l utente scrive nel campo di testo rileva ogni cambiamento dell input
     // QUesta funzione serve a salvare i dati che l utente inserisce nel form e aggiornarli nello stato formData
     function handleFormData(e) {
-        setFormData(e.target.value)
-        
+        setFormDataFilm(e.target.value)
     }
 
     // Prova console.log
-    console.log(formData)
+    console.log(formDataFilm)
 
 
 
@@ -35,10 +37,11 @@ export default function DataSubmit() {
         e.preventDefault()
 
         // Aggiorno setRicerca con il valore che inseriamo nel formData
-        setRicerca(formData)
 
+        setRicercaFilm(formDataFilm)
+        
         // Reset Form
-        setFormData("")
+        setFormDataFilm("")
 
     }
 
@@ -59,7 +62,7 @@ export default function DataSubmit() {
                         type="text"
                         placeholder='Inserisci il nome'
                         name="film"
-                        value={formData}
+                        value={formDataFilm}
                         onChange={handleFormData}
 
                     />}
