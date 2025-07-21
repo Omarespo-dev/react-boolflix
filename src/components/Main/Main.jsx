@@ -1,19 +1,19 @@
 
-// importo Filmsplit
-import FilmSplit from "../Mainsplit/FilmSplit";
+// // importo Filmsplit
+// import FilmSplit from "../Mainsplit/FilmSplit";
 
-// importo Seriesplit
-import SerieSplit from "../Mainsplit/SerieSplit";
+// // importo Seriesplit
+// import SerieSplit from "../Mainsplit/SerieSplit";
 
 
-export default function Main() {
+// export default function Main() {
 
-    return (
-        <>
-            <main>
-                <FilmSplit />
-                <SerieSplit/>
-            </main>
-        </>
-    );
-}
+//     return (
+//         <>
+//             <main>
+//                 <FilmSplit />
+//                 <SerieSplit/>
+//             </main>
+//         </>
+//     );
+// }

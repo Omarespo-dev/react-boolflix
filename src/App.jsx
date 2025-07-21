@@ -28,16 +28,9 @@ function App() {
 
   // Variabile di stato che gestice il risultato della ricerca
   const [ricerca, setRicerca] = useState("")
-  
-  // Variabile di stato che gestice il risultato della ricerca
-  // const [ricercaFilm, setRicercaFilm] = useState("")
 
   // setto variabile di stato per l input
   const [formData, setFormData] = useState("")
-  
-  // setto variabile di stato per l input
-  // const [formDataFilm, setFormDataFilm] = useState("")
-
 
   ///////////////////  FILM ///////////////////////////// 
 

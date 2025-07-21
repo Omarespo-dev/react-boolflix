@@ -1,6 +1,5 @@
 
 // PROVA CON LA SUDDIVISIONE PER RICERCAFILM FUNZIONA MA ABBIAMO DUE COMPONENTI IN PAGE 
-
 // Importo useContext e useState
 import { useContext, useState } from "react"
 
